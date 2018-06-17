@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  server:
+    build: .
+    command: >
+      gunicorn -b 0.0.0.0:8000
+        --access-logfile -
+        --reload
+        "tracker.app:create_app()"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/tracker'
+    ports:
+      - '8765:8000' # remove left site in case you want to be able to create instances of server

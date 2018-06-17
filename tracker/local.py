@@ -10,6 +10,7 @@ from statistic import StatisticView
 app = Flask(__name__)
 CORS(app)
 
+
 class StartView(FlaskView):
     @route('/')
     def index(self):
