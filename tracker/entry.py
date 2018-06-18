@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from flask import Flask
 from flask_classful import FlaskView, route
 
 
@@ -13,8 +12,9 @@ class EntryView(FlaskView):
 
     @route("/entry/list/<string:day_or_week_identifier>")
     def day(self, day_or_week_identifier):
-        # add swtich that checks for 'today', 'yesterday', date:date or week-num or 'week'
-        return u"Einträge von {}".format(day_or_date)
+        # add swtich that checks for 'today', 'yesterday', date:date or
+        # week-num or 'week'
+        return u"Einträge von {}".format(day_or_week_identifier)
 
     @route('/entry/<int:id>')
     def entry(self, id):

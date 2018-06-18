@@ -12,8 +12,8 @@ WORKDIR $INSTALL_PATH
 
 # Ensure requirements are cached and only get updated when they change. This will
 # drastically decrease build times when your requirements do not change.
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+COPY requirements-docker.txt requirements-docker.txt
+RUN pip install -r requirements-docker.txt
 
 # Copy in the application code from your work station at the current directory
 # over to the working directory.

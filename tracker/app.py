@@ -2,10 +2,10 @@ from flask import Flask
 from flask_cors import CORS
 from flask_classful import FlaskView, route
 
-from entry import EntryView
-from food_group import GroupView
-from food import FoodView
-from statistic import StatisticView
+from tracker.entry import EntryView
+from tracker.food_group import GroupView
+from tracker.food import FoodView
+from tracker.statistic import StatisticView
 
 
 class StartView(FlaskView):
@@ -14,7 +14,7 @@ class StartView(FlaskView):
         return "Startseite"
 
 
-def create_app():
+def create_app(settings_override=None):
     '''
      Create a Flask application using the app facory pattern
      :return: Flask app

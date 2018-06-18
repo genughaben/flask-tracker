@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, jsonify
+from flask import jsonify
 from flask_classful import FlaskView, route
+
 
 class FoodView(FlaskView):
 
@@ -11,7 +12,8 @@ class FoodView(FlaskView):
 
     @route("/group/<string:group_name>")
     def list_of_group(self, group_name):
-        # add swtich that checks for 'today', 'yesterday', date:date or week-num or 'week'
+        # add swtich that checks for 'today', 'yesterday', date:date or
+        # week-num or 'week'
         return u"Lebensmittel aus Gruppe {}".format(group_name)
 
     @route('<int:id>')
@@ -31,6 +33,7 @@ class FoodView(FlaskView):
     @route('/delete/<int:id>')
     def delete(self, id):
         return u"Lebensmittel {} löschen".format(id)
+
 
 # -*- coding: utf-8 -*-
 class FoodDB():

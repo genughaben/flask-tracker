@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flask import Flask
 from flask_classful import FlaskView, route
+
 
 class GroupView(FlaskView):
 

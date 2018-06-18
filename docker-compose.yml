@@ -1,10 +1,10 @@
 version: '2'
 
 services:
-  server:
+  tracker:
     build: .
     command: >
-      gunicorn -b 0.0.0.0:8000
+      gunicorn -b 0.0.0.0:8765
         --access-logfile -
         --reload
         "tracker.app:create_app()"
@@ -13,4 +13,4 @@ services:
     volumes:
       - '.:/tracker'
     ports:
-      - '8765:8000' # remove left site in case you want to be able to create instances of server
+      - '8765:8765' # remove left site in case you want to be able to create instances of tracker
